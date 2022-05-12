@@ -102,7 +102,7 @@ export function Form({ feedbackType, onFeedbackCanceled, onFeedbackSent }: FormP
                 onRemoveShot={handleScreenshotRemove}
                 screenshot={screenshot}
             />
-            <SubmitButton isLoading={isSendingFeedback} onPress={handleSendFeedback} />
+            <SubmitButton isLoading={isSendingFeedback} onPress={handleSendFeedback} comment={comment} />
         </View>
     </View>
   );

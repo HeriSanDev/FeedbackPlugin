@@ -6,11 +6,12 @@ import { styles } from './styles';
 
 interface SubmitButtonProps extends TouchableOpacityProps{
     isLoading: boolean;
+    comment: string;
 }
 
-export function SubmitButton({ isLoading, ...rest }: SubmitButtonProps) {
+export function SubmitButton({ isLoading, comment, ...rest }: SubmitButtonProps) {
   return (
-    <TouchableOpacity style={styles.container} {...rest}>
+    <TouchableOpacity style={comment.length===0 || isLoading?styles.containerDisabled : styles.container} {...rest} disabled={comment.length===0 || isLoading}>
         {isLoading
          ?
          <ActivityIndicator 
